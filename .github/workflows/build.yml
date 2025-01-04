@@ -11,16 +11,25 @@ jobs:
     build:
         runs-on: ubuntu-latest
 
+        name: PHP ${{ matrix.php }} - ${{ github.workflow }}
+
+        strategy:
+            fail-fast: false
+            matrix:
+              php: [8.2, 8.3]
+
         services:
             postgres:
                 image: postgres:alpine
                 env:
-                    POSTGRES_PASSWORD: main
-                    POSTGRES_USER: main
+                    POSTGRES_PASSWORD: root
+                    POSTGRES_USER: root
                     POSTGRES_DB: main
                 ports:
-                    - 5435:5432
+                    - 5432:5432
                 options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+        env:
+            DATABASE_URL: postgres://root:root@localhost:5432/main
 
         steps:
             - name: Checkout code
