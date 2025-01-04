@@ -22,6 +22,9 @@ jobs:
                     - 5435:5432
                 options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
+        env:
+            DATABASE_URL: postgresql://main:main@localhost:5432/main
+
         steps:
             - name: Checkout code
               uses: actions/checkout@v3
