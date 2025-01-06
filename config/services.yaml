@@ -1,13 +1,16 @@
-parameters:
-
 services:
     _defaults:
-        autowire: true     
-        autoconfigure: true 
+        autowire: true
+        autoconfigure: true
+        public: true
 
     CompanyInfoApi\:
-        resource: '../src/'
-        exclude:
-            - '../src/DependencyInjection/'
-            - '../src/Entity/'
-            - '../src/Kernel.php'
+      resource: '../src/'
+      exclude:
+        - '../src/DependencyInjection/'
+        - '../src/Entity/'
+        - '../src/Kernel.php'
+        - '../src/Tests/'
+        - '../src/Dto/'
+
+
