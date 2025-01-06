@@ -139,11 +139,6 @@ final readonly class CompanyController
         summary: 'Edit a some info on exists company',
         tags: ['Company'],
     )]
-    #[OA\Put(
-        operationId: 'edit-exists-company',
-        summary: 'Edit exists company',
-        tags: ['Company'],
-    )]
     #[OA\RequestBody(
         content: [
             new OA\MediaType(
