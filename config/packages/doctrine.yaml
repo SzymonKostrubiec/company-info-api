@@ -22,8 +22,8 @@ doctrine:
                 type: attribute
                 is_bundle: false
                 dir: '%kernel.project_dir%/src/Entity'
-                prefix: 'App\Entity'
-                alias: App
+                prefix: 'CompanyInfoApi\Entity'
+                alias: CompanyInfoApi
         controller_resolver:
             auto_mapping: false
 

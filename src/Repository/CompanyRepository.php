@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repository;
+namespace CompanyInfoApi\Repository;
 
-use App\Entity\Company;
+use CompanyInfoApi\Entity\Company;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 

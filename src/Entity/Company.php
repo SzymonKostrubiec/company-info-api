@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Entity;
+namespace CompanyInfoApi\Entity;
 
-use App\Repository\CompanyRepository;
+use CompanyInfoApi\Repository\CompanyRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
