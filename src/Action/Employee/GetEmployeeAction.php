@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CompanyInfoApi\Action\Employee;
 
 use CompanyInfoApi\Entity\Employee;

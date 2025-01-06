@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CompanyInfoApi\Action\Company;
 
 use CompanyInfoApi\Dto\CompanyDto;
