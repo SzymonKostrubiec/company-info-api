@@ -96,7 +96,7 @@ final readonly class EmployeeController
             $companies =  $this->getEmployeeAction->list();
 
             return new JsonResponse(
-                $this->serializer->serialize($companies, 'json'),
+                $this->serializer->serialize($companies, 'json', ['groups' => ['employee']]),
                 Response::HTTP_OK,
                 [],
                 true
@@ -119,7 +119,7 @@ final readonly class EmployeeController
             $employee = $this->getEmployeeAction->show($request);
 
             return new JsonResponse(
-                $this->serializer->serialize($employee, 'json'),
+                $this->serializer->serialize($employee, 'json', ['groups' => ['employee', 'employee_company']]),
                 Response::HTTP_OK,
                 [],
                 true

@@ -8,6 +8,7 @@ use CompanyInfoApi\Repository\EmployeeRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Attribute\Groups;
 
 #[ORM\Entity(repositoryClass: EmployeeRepository::class)]
 class Employee
@@ -15,25 +16,31 @@ class Employee
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[Groups('employee')]
     /* @phpstan-ignore-next-line - PHPStan  */
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups('employee')]
     private ?string $name = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups('employee')]
     private ?string $lastName = null;
 
     #[ORM\Column(length: 255)]
+    #[Groups('employee')]
     private ?string $email = null;
 
     #[ORM\Column(length: 255, nullable: true)]
+    #[Groups('employee')]
     private ?string $phone = null;
 
     /**
      * @var Collection<int, Company>
      */
     #[ORM\ManyToMany(targetEntity: Company::class, inversedBy: 'employees')]
+    #[Groups('employee_company')]
     private Collection $company;
 
     public function __construct()
