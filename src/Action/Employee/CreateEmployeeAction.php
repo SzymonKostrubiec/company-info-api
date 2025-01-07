@@ -21,8 +21,8 @@ final readonly class CreateEmployeeAction
     public function create(EmployeeDto $employeeDto): Employee
     {
         $employee= $this->employeeResolver->resolveForCreate($employeeDto);
-       $this->employeeRepository->add($employee);
-
-       return $employee;
+        $this->employeeRepository->add($employee);
+        
+        return $employee;
     }
 }
